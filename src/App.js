@@ -17,6 +17,7 @@ export default class App extends Component {
                               <Route
                                    exact
                                    path="/"
+                                   key="general"
                                    element={
                                         <News
                                              pageSize="9"
@@ -24,10 +25,11 @@ export default class App extends Component {
                                              category="general"
                                         />
                                    }
-                              />
+                              ></Route>
                               <Route
                                    exact
                                    path="/business"
+                                   key="business"
                                    element={
                                         <News
                                              pageSize="9"
@@ -35,10 +37,11 @@ export default class App extends Component {
                                              category="business"
                                         />
                                    }
-                              />
+                              ></Route>
                               <Route
                                    exact
                                    path="/entertainment"
+                                   key="entertainment"
                                    element={
                                         <News
                                              pageSize="9"
@@ -46,10 +49,11 @@ export default class App extends Component {
                                              category="entertainment"
                                         />
                                    }
-                              />
+                              ></Route>
                               <Route
                                    exact
                                    path="/health"
+                                   key="health"
                                    element={
                                         <News
                                              pageSize="9"
@@ -57,10 +61,11 @@ export default class App extends Component {
                                              category="health"
                                         />
                                    }
-                              />
+                              ></Route>
                               <Route
                                    exact
                                    path="/science"
+                                   key="science"
                                    element={
                                         <News
                                              pageSize="9"
@@ -68,10 +73,11 @@ export default class App extends Component {
                                              category="science"
                                         />
                                    }
-                              />
+                              ></Route>
                               <Route
                                    exact
                                    path="/sports"
+                                   key="sports"
                                    element={
                                         <News
                                              pageSize="9"
@@ -79,9 +85,11 @@ export default class App extends Component {
                                              category="sports"
                                         />
                                    }
-                              />
+                              ></Route>
                               <Route
-                                   exact path="/technology"
+                                   exact
+                                   path="/technology"
+                                   key="business"
                                    element={
                                         <News
                                              pageSize="9"
@@ -89,7 +97,7 @@ export default class App extends Component {
                                              category="business"
                                         />
                                    }
-                              />
+                              ></Route>
                          </Routes>
                     </Router>
                </>

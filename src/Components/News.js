@@ -7,8 +7,8 @@ export class News extends Component {
 
      static defaultProps = {
           country: "in",
-          pageSize: "9",
-          category:"general"
+          pageSize: "12",
+          category: "science"
      }
      static propTypes = {
           country: PropTypes.string,
@@ -28,16 +28,16 @@ export class News extends Component {
           this.handleNextClick = this.handleNextClick.bind(this);
      }
 
-     async gettingData(pageNo) {
+     async gettingData(pageNo, category) {
           console.log("ok")
-          let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&sortBy=popularity&category=${this.props.category}&apiKey=86a2c3d7283f445a9312dded5ba3abd4&page=${pageNo}&pageSize=${this.props.pageSize}`;
+          let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&sortBy=popularity&category=${category}&apiKey=86a2c3d7283f445a9312dded5ba3abd4&page=${pageNo}&pageSize=${this.props.pageSize}`;
           let data = await fetch(url);
           let parseData = await data.json();
           this.setState({ articles: parseData.articles, loading: false, totalResults: parseData.totalResults});
      }
 
      async componentDidMount() {
-          this.gettingData(this.state.page);
+          this.gettingData(this.state.page,this.props.category);
      }
 
      async handlePrevClick() {
