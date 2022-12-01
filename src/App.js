@@ -15,8 +15,7 @@ export default class App extends Component {
 
                          <Routes>
                               <Route
-                                   exact
-                                   path="/"
+                                   exact path="/"
                                    key="general"
                                    element={
                                         <News
@@ -27,8 +26,7 @@ export default class App extends Component {
                                    }
                               ></Route>
                               <Route
-                                   exact
-                                   path="/business"
+                                   exact path="/business"
                                    key="business"
                                    element={
                                         <News
@@ -89,12 +87,12 @@ export default class App extends Component {
                               <Route
                                    exact
                                    path="/technology"
-                                   key="business"
+                                   key="technology"
                                    element={
                                         <News
                                              pageSize="9"
                                              country="in"
-                                             category="business"
+                                             category="technology"
                                         />
                                    }
                               ></Route>
