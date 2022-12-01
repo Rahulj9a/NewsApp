@@ -3,22 +3,34 @@ import "./App.css";
 import React, { Component } from "react";
 import Navbar from "./Components/Navbar";
 import News from "./Components/News";
+import LoadingBar from "react-top-loading-bar";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 export default class App extends Component {
+     state = {
+          progress: 2,
+     };
+     setProgress = (progress) => {
+          this.setState({progress: progress});
+     }
      render() {
           return (
                <>
                     <Router>
+                         <LoadingBar
+                              color="#f11946"
+                              progress={this.state.progress}
+                         />
                          <Navbar />
 
                          <Routes>
                               <Route
-                                   exact path="/"
+                                   exact
+                                   path="/"
                                    key="general"
                                    element={
-                                        <News
+                                        <News setProgress={this.setProgress}
                                              pageSize="9"
                                              country="in"
                                              category="general"
@@ -26,10 +38,11 @@ export default class App extends Component {
                                    }
                               ></Route>
                               <Route
-                                   exact path="/business"
+                                   exact
+                                   path="/business"
                                    key="business"
                                    element={
-                                        <News
+                                        <News setProgress={this.setProgress}
                                              pageSize="9"
                                              country="in"
                                              category="business"
@@ -41,7 +54,7 @@ export default class App extends Component {
                                    path="/entertainment"
                                    key="entertainment"
                                    element={
-                                        <News
+                                        <News setProgress={this.setProgress}
                                              pageSize="9"
                                              country="in"
                                              category="entertainment"
@@ -53,7 +66,7 @@ export default class App extends Component {
                                    path="/health"
                                    key="health"
                                    element={
-                                        <News
+                                        <News setProgress={this.setProgress}
                                              pageSize="9"
                                              country="in"
                                              category="health"
@@ -65,7 +78,7 @@ export default class App extends Component {
                                    path="/science"
                                    key="science"
                                    element={
-                                        <News
+                                        <News setProgress={this.setProgress}
                                              pageSize="9"
                                              country="in"
                                              category="science"
@@ -77,7 +90,7 @@ export default class App extends Component {
                                    path="/sports"
                                    key="sports"
                                    element={
-                                        <News
+                                        <News setProgress={this.setProgress}
                                              pageSize="9"
                                              country="in"
                                              category="sports"
@@ -89,7 +102,7 @@ export default class App extends Component {
                                    path="/technology"
                                    key="technology"
                                    element={
-                                        <News
+                                        <News setProgress={this.setProgress}
                                              pageSize="9"
                                              country="in"
                                              category="technology"
